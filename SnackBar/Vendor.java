@@ -24,7 +24,8 @@ public class Vendor
      */
     public Vendor(int price, int stock)
     {
-        //You need to complete this using this. notation
+        this.price = price;
+        this.stock = stock;
     }
 
     /**
@@ -35,7 +36,7 @@ public class Vendor
 
     public void setStock(int stock)
     {
-        //You need to complete this using this. notation
+        this.stock = stock;
     }
 
     /**
@@ -44,7 +45,7 @@ public class Vendor
      */
     public int getStock()
     {
-        //complete this
+        return stock;
     }
 
     /**
@@ -55,6 +56,7 @@ public class Vendor
     public void addMoney(int d)
     {
         //You need to complete this using mutator
+        deposit += d;
     }
 
     /**
@@ -78,6 +80,15 @@ public class Vendor
     public boolean makeSale()
     {
         //create the makesale method
+        if(stock > 0 && deposit >= price){
+            stock--;
+            change = deposit - price;
+
+
+            return true;
+
+        }
+        else{return false;}
     }
 
     /**
@@ -92,13 +103,24 @@ public class Vendor
         return c;
     }
 
+
+    /**
+     *
+     * @return ints q, d, n, p are abbreviated of coinChange to different methods for the ease of concatenations.
+     */
     public String getChangeString()
     {
         //From Ethan: create a get method that returns the amount and type of coins that should be returned by the machine
         /*
         note that the coin class has a .getQuarters(), a .getDimes() etc etc (use the coin class!)
         */
-        
+        Coins coinChange = new Coins(change);
+        int q = coinChange.getQuarters();
+        int d =coinChange.getDimes();
+        int n =coinChange.getNickles();
+        int p =coinChange.getPennies();
+        String endChange = +q +" " +d +" " +n +" " +p;
+        return endChange "Quarters :" +q +" Dimes :"+d +" Nickels :"+n " Pennies :"+p;
 
         String changeString="";
 
