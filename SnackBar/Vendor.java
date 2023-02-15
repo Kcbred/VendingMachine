@@ -119,10 +119,8 @@ public class Vendor
         int d =coinChange.getDimes();
         int n =coinChange.getNickles();
         int p =coinChange.getPennies();
-        String endChange = +q +" " +d +" " +n +" " +p;
-        return endChange "Quarters :" +q +" Dimes :"+d +" Nickels :"+n " Pennies :"+p;
 
-        String changeString="";
+        String changeString= "Quarters :" +q +" Dimes :"+d +" Nickels :"+n " Pennies :"+p;
 
         return changeString;
     }
